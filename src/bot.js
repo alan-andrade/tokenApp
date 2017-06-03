@@ -27,6 +27,20 @@ bot.onEvent = function(session, message) {
 }
 
 function onMessage(session, message) {
+    if (message.body == 'Img') {
+        session.reply(
+            SOFA.Message({
+                body: 'Ethereum Image',
+                attachments: [{
+                    'type': 'image',
+                    'url': 'ethereum.jpg'
+                }]
+            })
+        );
+
+        return;
+    }
+
   welcome(session)
 }
 
@@ -73,7 +87,7 @@ function welcome(session) {
 }
 
 function pong(session) {
-  sendMessage(session, `Pong`)
+  sendMessage(session, `Pongzzz`)
 }
 
 // example of how to store state on each user
